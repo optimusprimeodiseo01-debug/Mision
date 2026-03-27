@@ -1,0 +1,22 @@
+Valores-/
+│
+├── input/
+│   ├── __init__.py
+│   └── señales.py
+│
+├── core/
+│   ├── __init__.py
+│   ├── tapiz.py
+│   └── operador_L.py
+│
+├── dynamics/
+│   ├── __init__.py
+│   └── parpadeo.py
+│
+├── executor/
+│   ├── __init__.py
+│   └── decision.py
+│
+├── main.py
+├── requirements.txt
+└── README.md
