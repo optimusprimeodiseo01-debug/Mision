@@ -1,0 +1,35 @@
+# main.py
+
+from input.señales import obtener_senales
+from core.tapiz import construir_T, construir_H
+from core.operador_L import construir_L
+from dynamics.parpadeo import evolucionar
+from executor.decision import decidir
+
+def run(symbol="GOOGL"):
+    print("\n=== INICIO TAPIZ ENGINE ===")
+
+    # 1. Entrada
+    precios = obtener_senales(symbol)
+    print("Precios:", precios)
+
+    # 2. Tapiz
+    T = construir_T(precios)
+    H = construir_H(T)
+
+    # 3. Operador
+    L = construir_L(H)
+
+    # 4. Dinámica
+    psi = evolucionar(L)
+    print("Estado psi:", psi)
+
+    # 5. Decisión
+    decision, score = decidir(L)
+
+    print("\n=== RESULTADO ===")
+    print("Score:", score)
+    print("Decision:", decision)
+
+if __name__ == "__main__":
+    run()
