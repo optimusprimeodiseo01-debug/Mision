@@ -1,0 +1,10 @@
+# core/tapiz.py
+
+import numpy as np
+
+def construir_T(precios):
+    precios = np.where(precios <= 0, 1e-9, precios)
+    return precios
+
+def construir_H(T):
+    return np.log(T)
