@@ -1,0 +1,12 @@
+# input/señales.py
+
+import yfinance as yf
+
+def obtener_senales(symbol="GOOGL", period="5d"):
+    stock = yf.Ticker(symbol)
+    hist = stock.history(period=period)
+
+    if hist.empty:
+        raise ValueError("Sin datos")
+
+    return hist['Close'].values
